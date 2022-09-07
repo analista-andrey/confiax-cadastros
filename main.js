@@ -12,7 +12,7 @@ function makeGet(url) {
 function searchCnpj() {
     var cnpj = document.getElementById("cCnpj")
     if(cnpj.value != "") {
-        let data = makeGet("https://brasilapi.com.br/api/cnpj/v1/"+cnpj);
+        let data = makeGet("https://brasilapi.com.br/api/cnpj/v1/"+cnpj.value);
         let receitaInfos = JSON.parse(data);
         console.log(receitaInfos);
     }
