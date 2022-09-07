@@ -17,4 +17,4 @@ function searchCnpj() {
     console.log(receitaInfos)
 }
 
-main()
+searchCnpj()
