@@ -5,6 +5,6 @@
     <title>Cadastros ConfiaX</title>
   </head>
   <body>
-    <h1> Cadastros ConfiaX </h1>
+    <h1> Teste Cadastros ConfiaX </h1>
   </body>
 </html>
