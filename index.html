@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="mestre.css" rel="stylesheet" media="all" />
-    <script src="main.js"></script>
+    <link href="css/mestre.css" rel="stylesheet" media="all" />
+    <script src="scripts/main.js"></script>
     <title>ConfiaX Cadastros</title>
 
   </head>
@@ -17,38 +17,7 @@
     <script src="main.js"></script>
     <div id="doctoInputForm" class="mainDiv">
 
-      <form id="mainForm" name="cnpjForm" oninput="searchCnpj()">
-
-        <fieldset id="cnpj">
-        
-          <legend>
-
-            <label for="cCnpj">
-
-              <p>
-
-                CNPJ
-
-              </p>
-
-            </label>
-
-          </legend>
-
-          <input type="text" name="tCnpj" id="cCnpj" size="18" maxlength="18" placeholder="CNPJ" required="required"/>
-
-          <br />
-
-          <input type="submit" value="Pesquisar CNPJ">
-
-        </fieldset>
-
-      </form>
-    
-      <br />
-      <hr>
-
-      <form id="afterForm" name="completeForm">
+      <form id="esateForm" name="infosEstate">
 
         <fieldset id="estateInfos">
         
@@ -58,9 +27,9 @@
 
           </legend>
 
-          <label for="cCnpj2">
+          <label for="cCnpj">
             <p>
-              CNPJ: <input type="text" name="tCnpj2" id="cCnpj2" size="18" maxlength="18" placeholder="CNPJ" required="required"/>
+              CNPJ: <input type="text" name="tCnpj" id="cCnpj" size="18" maxlength="18" placeholder="CNPJ" required="required" oninput="searchCnpj()" />
             </p>
           </label>
           
@@ -69,25 +38,26 @@
           <p>
             CRECI: <br />
             <input type="radio" name="tCreci" id="cCreciS" required="required"/> Sim 
+            <br />
             <input type="radio" name="tCreci" id="cCreciN" required="required"/> Não 
           </p>
 
           <br />
 
           <p>
-            CRECI PJ:
+            CRECI PJ: <input type="text" name="tCreciPj" id="cCreciPj" size="18" maxlength="18" placeholder="CRECI - PJ" required="required"/>
           </p>
 
           <br />
 
           <p>
-            Razão social:
+            Razão social: <input type="text" name="tRazao" id="cRazao" size="30" maxlength="120" placeholder="Razão social" required="required"/>
           </p>
 
           <br />
 
           <p>
-            Nome Fantasia: 
+            Nome Fantasia: <input type="text" name="tFantasia" id="cFantasia" size="30" maxlength="120" placeholder="Nome fantasia" required="required"/>
           </p>
 
           <br />
@@ -99,47 +69,47 @@
             </legend>
 
             <p>
-              CEP:
+              CEP: <input type="text" name="tCep" id="cCep" size="30" maxlength="9" placeholder="CEP" required="required"/>
             </p>
 
             <p>
-              Logradouro:
-            </p>
-            
-            <br />
-
-            <p>
-              Número:
-            </p>
-
-            <br />
-
-            <p>
-              Complemento:
-            </p>
-
-            <br />
-
-            <p>
-              Bairro:
+              Logradouro: <input type="text" name="tLogra" id="cLogra" size="30" maxlength="120" placeholder="logradouro" required="required" />
             </p>
             
             <br />
 
             <p>
-              Cidade:
+              Número: <input type="number" name="tNum" id="cNum" size="30" maxlength="10" placeholder="31" required="required" />
             </p>
 
             <br />
 
             <p>
-              Estado:
+              Complemento: <input type="text" name="tComple" id="cComple" size="30" maxlength="100" placeholder="Complemento"/>
             </p>
 
             <br />
 
             <p>
-              País
+              Bairro: <input type="text" name="tBairro" id="cBairro" size="30" maxlength="120" placeholder="Bairro" required="required"/>
+            </p>
+            
+            <br />
+
+            <p>
+              Cidade: <input type="text" name="tCity" id="cCity" size="30" maxlength="120" placeholder="Cidade" required="required"/>
+            </p>
+
+            <br />
+
+            <p>
+              Estado (UF): <input type="text" name="tUf" id="cUf" size="4" maxlength="2" placeholder="UF" required="required"/>
+            </p>
+
+            <br />
+
+            <p>
+              País: <input type="text" name="tPais" id="cPais" size="30" maxlength="100" placeholder="País"/>
             </p>
 
           </fieldset>
@@ -153,19 +123,19 @@
           </legend>
 
           <p>
-            E-mail para contato:
+            E-mail para contato: <input type="email" name="tEmail" id="cEmail" size="30" maxlength="120" placeholder="E-mail para contato" required="required"/>
           </p>
 
           <br />
 
           <p>
-            E-mail para envio de faturas:
+            E-mail para envio de faturas: <input type="email" name="tEmailFatura" id="cEmailFatura" size="30" maxlength="120" placeholder="E-mail para envio de faturas" required="required"/>
           </p>
 
           <br />
 
           <p>
-            Telefone para contato:
+            Telefone para contato: <input type="text" name="tPhone" id="cPhone" size="30" maxlength="14" placeholder="Telefone/celular" required="required"/>
           </p>
 
           <fieldset>
@@ -175,25 +145,25 @@
             </legend>
 
             <p>
-              Banco:
+              Banco: <input type="text" name="tBank" id="cBank" size="30" maxlength="120" placeholder="Banco" required="required"/>
             </p>
             
             <br />
 
             <p>
-              Agência: 
+              Agência: <input type="text" name="tAg" id="cAg" size="20" maxlength="10" placeholder="Agência" required="required"/>
             </p>
             <p>
-              Dígito verificador:
+              Dígito verificador: <input type="text" name="tAgDv" id="cAgDv" size="4" maxlength="1" placeholder="DV" required="required"/>
             </p>
 
             <br />
 
             <p>
-              Conta corrente:
+              Conta corrente: <input type="text" name="tCc" id="cCc" size="20" maxlength="10" placeholder="Conta" required="required"/>
             </p>
             <p>
-              Dígito verificador:
+              Dígito verificador: <input type="text" name="tCcDv" id="cCcDv" size="4" maxlength="1" placeholder="DV" required="required"/>
             </p>
 
           </fieldset>
@@ -207,13 +177,13 @@
           </legend>
 
           <p>
-            Nome completo:
+            Nome completo: <input type="text" name="tAdmName" id="cAdmName" size="30" maxlength="120" placeholder="Nome completo" required="required"/>
           </p>
 
           <br />
 
           <p>
-            CPF:
+            CPF: <input type="text" name="tAdmCpf" id="cAdmCpf" size="30" maxlength="14" placeholder="CPF" required="required"/>
           </p>
 
         </fieldset>
