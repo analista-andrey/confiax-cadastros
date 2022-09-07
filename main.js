@@ -10,9 +10,9 @@ function makeGet(url) {
 //Cria as linhas da tabela de acordo com a resposta requisição GET
 
 function searchCnpj() {
-    var cnpj = document.getElementById("cCnpj")
-    if(cnpj.value != "") {
-        let data = makeGet("https://brasilapi.com.br/api/cnpj/v1/"+cnpj.value);
+    var cnpj = toString(document.getElementById("cCnpj").value)
+    if(cnpj != "") {
+        let data = makeGet("https://brasilapi.com.br/api/cnpj/v1/"+cnpj);
         let receitaInfos = JSON.parse(data);
         console.log(receitaInfos);
     }
