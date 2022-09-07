@@ -16,5 +16,3 @@ function searchCnpj() {
     let receitaInfos = JSON.parse(data);
     console.log(receitaInfos)
 }
-
-searchCnpj()
