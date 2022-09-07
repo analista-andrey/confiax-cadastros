@@ -1,3 +1,5 @@
+//declara a Função GET
+
 function makeGet(url) {
     let request = new XMLHttpRequest()
     request.open("GET", url, false)
@@ -5,35 +7,14 @@ function makeGet(url) {
     return request.responseText
 }
 
-function createLine(feriados) {
-    linha = document.createElement("tr");
-    tdName = document.createElement("td");
-    tdDate = document.createElement("td");
-    tdType = document.createElement("td");
-    tdName.innerHTML = feriados.name   
-    tdDate.innerHTML = feriados.date
-    tdType.innerHTML = feriados.type
+//Cria as linhas da tabela de acordo com a resposta requisição GET
 
-    linha.appendChild(tdName);
-    linha.appendChild(tdDate);
-    linha.appendChild(tdType);
-
-    return linha
-}
-
-function main() {
-   let data = makeGet("https://brasilapi.com.br/api/feriados/v1/2022");
-   let feriados = JSON.parse(data);
-   let tabela = document.getElementById("tabela"); 
-
-    //console.log(feriados)
-
-    feriados.forEach(element => {
-        let linha = createLine(element);
-        tabela.appendChild(linha);
-    }
-
-    );
+function searchCnpj() {
+    
+    var cnpj = document.getElementById('cCnpj').value
+    let data = makeGet("https://brasilapi.com.br/api/cnpj/v1/"+cnpj);
+    let receitaInfos = JSON.parse(data);
+    console.log(receitaInfos)
 }
 
 main()
