@@ -5,7 +5,7 @@ function makeGet(url) {
     return request.responseText
 }
 
-function createLine(usuer) {
+function createLine(feriados) {
 
 }
 
