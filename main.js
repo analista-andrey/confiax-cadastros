@@ -12,5 +12,5 @@ function makeGet(url) {
 function searchCnpj() {
 
     var cnpj = document.getElementById('cCnpj').value;
-    console.log(length(cnpj));
+    console.log(parseInt(length(cnpj)));
 }
