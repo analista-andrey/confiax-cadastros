@@ -7,38 +7,215 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="mestre.css" rel="stylesheet" media="all" />
+    <script src="main.js"></script>
     <title>ConfiaX Cadastros</title>
 
   </head>
 
   <body>
 
-    <table id="tabela">
-
-    </table>
-    
     <div id="doctoInputForm" class="mainDiv">
 
-      <form method="post" action="main.js" id="mainForm" name="cnpjForm" onsubmit="searchCnpj();">
+      <form id="mainForm" name="cnpjForm">
 
-        <label for="cCNPJ">
+        <fieldset id="cnpj">
+        
+          <legend>
 
-          <fieldset id="cnpj">
+            <label for="cCnpj">
+
+              <p>
+
+                CNPJ
+
+              </p>
+
+            </label>
+
+          </legend>
+
+          <input type="text" name="tCnpj" id="cCnpj" size="18" maxlength="18" placeholder="CNPJ" required="required"/>
+
+          <br />
+
+          <input type="submit" value="Pesquisar CNPJ" onclick="searchCnpj();">
+
+        </fieldset>
+
+      </form>
+    
+      <br />
+      <hr>
+
+      <form id="afterForm" name="completeForm">
+
+        <fieldset id="estateInfos">
+        
+          <legend>
+
+            Informações do Estipulante
+
+          </legend>
+
+          <label for="cCnpj2">
+            <p>
+              CNPJ: <input type="text" name="tCnpj2" id="cCnpj2" size="18" maxlength="18" placeholder="CNPJ" required="required"/>
+            </p>
+          </label>
           
-            <legend> 
-            
-              CNPJ
+          <br />
+          
+          <p>
+            CRECI:
+          </p>
 
+          <br />
+
+          <p>
+            CRECI PJ:
+          </p>
+
+          <br />
+
+          <p>
+            Razão social:
+          </p>
+
+          <br />
+
+          <p>
+            Nome Fantasia: 
+          </p>
+
+          <br />
+
+          <fieldset>
+            
+            <legend>
+              Endereço
             </legend>
-  
-            <input type="text" name="tCnpj" id="cCnpj" size="18" maxlength="18" placeholder="CNPJ" />
-  
+
+            <p>
+              CEP:
+            </p>
+
+            <p>
+              Logradouro:
+            </p>
+            
+            <br />
+
+            <p>
+              Número:
+            </p>
+
+            <br />
+
+            <p>
+              Complemento:
+            </p>
+
+            <br />
+
+            <p>
+              Bairro:
+            </p>
+            
+            <br />
+
+            <p>
+              Cidade:
+            </p>
+
+            <br />
+
+            <p>
+              Estado:
+            </p>
+
+            <br />
+
+            <p>
+              País
+            </p>
+
           </fieldset>
 
-        </label>
+        </fieldset>
 
-        <input type="submit" value="Pesquisar CNPJ">
+        <fieldset>
+
+          <legend>
+            Contato e Faturamento
+          </legend>
+
+          <p>
+            E-mail para contato:
+          </p>
+
+          <br />
+
+          <p>
+            E-mail para envio de faturas:
+          </p>
+
+          <br />
+
+          <p>
+            Telefone para contato:
+          </p>
+
+          <fieldset>
+
+            <legend>
+              Dados bancários
+            </legend>
+
+            <p>
+              Banco:
+            </p>
+            
+            <br />
+
+            <p>
+              Agência: 
+            </p>
+            <p>
+              Dígito verificador:
+            </p>
+
+            <br />
+
+            <p>
+              Conta corrente:
+            </p>
+            <p>
+              Dígito verificador:
+            </p>
+
+          </fieldset>
+
+        </fieldset>
+
+        <fieldset>
+
+          <legend>
+            Informações do Sócio Administrador
+          </legend>
+
+          <p>
+            Nome completo:
+          </p>
+
+          <br />
+
+          <p>
+            CPF:
+          </p>
+
+        </fieldset>
+
       </form>
 
     </div>
