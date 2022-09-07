@@ -6,13 +6,34 @@ function makeGet(url) {
 }
 
 function createLine(feriados) {
+    linha = document.createElement("tr");
+    tdName = document.createElement("td");
+    tdDate = document.createElement("td");
+    tdType = document.createElement("td");
+    tdName.innerHTML = feriados.name   
+    tdDate.innerHTML = feriados.date
+    tdType.innerHTML = feriados.type
 
+    linha.appendChild(tdName);
+    linha.appendChild(tdDate);
+    linha.appendChild(tdType);
+
+    return linha
 }
 
 function main() {
-    data = makeGet("https://brasilapi.com.br/api/feriados/v1/2022")
-    feriados = JSON.parse(data) 
-    console.log(feriados)
+   let data = makeGet("https://brasilapi.com.br/api/feriados/v1/2022");
+   let feriados = JSON.parse(data);
+   let tabela = document.getElementById("tabela"); 
+
+    //console.log(feriados)
+
+    feriados.forEach(element => {
+        let linha = createLine(element);
+        tabela.appendChild(linha);
+    }
+
+    );
 }
 
 main()
