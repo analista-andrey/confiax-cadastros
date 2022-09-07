@@ -11,8 +11,8 @@ function makeGet(url) {
 
 function searchCnpj() {
     
-    var cnpj = document.getElementById('cCnpj').value
+    let cnpj = document.getElementById('cCnpj').value
     let data = makeGet("https://brasilapi.com.br/api/cnpj/v1/"+cnpj);
     let receitaInfos = JSON.parse(data);
-    console.log(receitaInfos)
+    console.log(receitaInfos);
 }
