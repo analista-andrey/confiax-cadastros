@@ -8,7 +8,7 @@ function makeGet(url) {
 };
 
 function izeeLogin(url) {
-    var data = "username=andrey.goncalves%40redevistorias.com.br&password=Minhasupersenha%40123";
+    var data = "username=andrey.goncalves@redevistorias.com.br&password=Minhasupersenha@123";
 
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
@@ -23,6 +23,8 @@ function izeeLogin(url) {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     xhr.send(data);
+
+    return getAllResponseHeaders();
 };
 
 function formatarCNPJ(e){
@@ -224,7 +226,7 @@ function searchBox() {
 
 function jobEsteira() {
     
-    let request = izeeLogin("https://auth.redevistorias.com.br/login?response_type=token&redirect_uri=https://app.izee.com.br/auth&client_id=redeizee&scope=order:*%2520client:*%2520device:*%2520financial:*%2520package:*%2520entity:*%2520integration:*");
+    let request = izeeLogin("https://auth.redevistorias.com.br/login?response_type=token&redirect_uri=https://app.izee.com.br/auth&client_id=redeizee&scope=order:*%20client:*%20device:*%20financial:*%20package:*%20entity:*%20integration:*");
 
     let response = JSON.parse(request);
 
