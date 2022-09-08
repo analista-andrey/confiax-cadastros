@@ -1,0 +1,23 @@
+.mainDiv {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+#cSearchBanks {
+    width: 30%;
+    -webkit-transition: width 0.15s ease-in-out;
+    transition: width 0.15s ease-in-out;
+}
+
+#cSearchBanks:focus {
+    width: 70%;
+}
+
+#cBanks {
+    margin-left: 90px;
+}
+
+.banks {
+    display: list-item;
+}

@@ -7,6 +7,24 @@ function makeGet(url) {
     return request.responseText;
 };
 
+function izeeLogin(url) {
+    var data = "username=andrey.goncalves%40redevistorias.com.br&password=Minhasupersenha%40123";
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function() {
+      if(this.readyState === 4) {
+        console.log(this.responseText);
+      }
+    });
+
+    xhr.open("POST", url);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.send(data);
+};
+
 function formatarCNPJ(e){
 
     var v= e.target.value.replace(/\D/g,"");
@@ -173,6 +191,44 @@ function searchCnpj() {
     }
 };
 
-function searchBank() {
+function createBankOption(banks) {
 
-}
+    let inHtml = banks.fullName
+
+    option = document.createElement("option");
+    
+    option.innerHTML = inHtml;
+
+    //option.setAttribute("value", inHtml)
+
+    return option;
+    
+};
+
+function searchBox() {
+
+    let data = makeGet("https://brasilapi.com.br/api/banks/v1");
+    let banks = JSON.parse(data);
+    let orderedList = document.getElementById("cBanks");
+
+
+    banks.forEach(element => {
+        let option = createBankOption(element);
+        orderedList.appendChild(option);
+        option.classList.add("banks");
+        
+    }
+
+    );
+};
+
+function jobEsteira() {
+    
+    let request = izeeLogin("https://auth.redevistorias.com.br/login?response_type=token&redirect_uri=https://app.izee.com.br/auth&client_id=redeizee&scope=order:*%2520client:*%2520device:*%2520financial:*%2520package:*%2520entity:*%2520integration:*");
+
+    let response = JSON.parse(request);
+
+    console.log(response);
+
+
+};

@@ -17,7 +17,7 @@
     <script src="main.js"></script>
     <div id="doctoInputForm" class="mainDiv">
 
-      <form id="esateForm" name="infosEstate">
+      <form id="esateForm" name="infosEstate" onloadstart="searchBank()" >
 
         <fieldset id="estateInfos">
         
@@ -145,7 +145,8 @@
             </legend>
 
             <p>
-              Banco: <input type="text" name="tBank" id="cBank" size="30" maxlength="120" placeholder="Banco" required="required"/>
+              Banco: <input list="cBanks" type="search" id="cSearchBanks" placeholder="Pesquisar Banco" onfocus="searchBox()" /> <datalist id="cBanks"></datalist>
+
             </p>
             
             <br />
@@ -154,7 +155,7 @@
               Agência: <input type="text" name="tAg" id="cAg" size="20" maxlength="10" placeholder="Agência" required="required"/>
             </p>
             <p>
-              Dígito verificador: <input type="text" name="tAgDv" id="cAgDv" size="4" maxlength="1" placeholder="DV" required="required"/>
+              Dígito verificador: <input type="number" name="tAgDv" id="cAgDv" maxlength="1" placeholder="DV" required="required"/>
             </p>
 
             <br />
@@ -163,7 +164,7 @@
               Conta corrente: <input type="text" name="tCc" id="cCc" size="20" maxlength="10" placeholder="Conta" required="required"/>
             </p>
             <p>
-              Dígito verificador: <input type="text" name="tCcDv" id="cCcDv" size="4" maxlength="1" placeholder="DV" required="required"/>
+              Dígito verificador: <input type="number" name="tCcDv" id="cCcDv" size="4" maxlength="1" placeholder="DV" required="required"/>
             </p>
 
           </fieldset>
@@ -188,6 +189,9 @@
 
         </fieldset>
 
+        <br />
+
+        <input type="button" value="Enviar" name="submit" onclick="jobEsteira()" />
       </form>
 
     </div>
